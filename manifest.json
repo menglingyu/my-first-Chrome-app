@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+  "name": "One-click Kittens",
+  "description": "This extension demonstrates a browser action with kittens.",
+  "version": "1.0",
+  "permissions": [
+    "tabs",
+    "http://media.shanbay.com/",
+    "https://api.shanbay.com/",
+    "https://www.theguardian.com/politics/2015/may/28/david-cameron-sets-off-on-mission-to-win-over-european-leaders"
+  ],
+  "content_scripts": [
+        {
+            "matches": ["https://www.theguardian.com/politics/2015/may/28/david-cameron-sets-off-on-mission-to-win-over-european-leaders"],
+            "all_frames": true,
+            "js": ["./static/jquery.min.js", "./index.js","./transplate.js"],
+            "css": ["./index.css"]
+        }
+  ],
+  "browser_action": {
+    "default_title": "Set this page's color.",
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  }
+}
